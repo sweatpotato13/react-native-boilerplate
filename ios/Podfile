@@ -1,0 +1,35 @@
+platform :ios, '10.0'
+
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+target 'boilerplate' do
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  target 'boilerplateTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  # Update deployment target of each pod
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '8.0'
+        end
+    end
+  end
+end
+
+target 'boilerplate-tvOS' do
+  # Pods for boilerplate-tvOS
+
+  target 'boilerplate-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
