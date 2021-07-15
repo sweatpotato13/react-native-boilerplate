@@ -2,6 +2,21 @@
   "name": "react-native-boilerplate",
   "version": "1.1.0",
   "private": true,
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn run eslint --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "devmoji -e",
+      "commit-msg": "if git-branch-is dev; then commitlint -E HUSKY_GIT_PARAMS; fi"
+    }
+  },
   "scripts": {
     "start": "react-native start",
     "test": "jest",
@@ -89,6 +104,7 @@
     "babel-jest": "26.6.3",
     "babel-loader": "8.1.0",
     "babel-plugin-module-resolver": "3.2.0",
+    "devmoji": "^2.3.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.4",
     "enzyme-to-json": "3.5.0",
@@ -103,6 +119,7 @@
     "jest-styled-components": "6.3.4",
     "jsdom": "15.2.1",
     "metro-react-native-babel-preset": "0.63.0",
+    "prettier": "^2.3.2",
     "react-docgen-typescript-loader": "3.7.2",
     "react-docgen-typescript-webpack-plugin": "1.1.0",
     "react-dom": "17.0.1",
