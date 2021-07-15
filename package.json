@@ -15,7 +15,6 @@
     "rename": "react-native-rename",
     "pods": "cd ios && pod install && cd ..",
     "nodeify": "rn-nodeify --hack --install",
-    "postinstall": "yarn pods && yarn nodeify",
     "i18next:extract": "i18next 'src/**/**/*.tsx' --config 'src/I18n/i18n-parser.config.js'"
   },
   "dependencies": {
