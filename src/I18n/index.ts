@@ -7,7 +7,7 @@ import * as resources from '@I18n/locales';
 i18next.use(initReactI18next).init({
     lng: getLocales()[0].languageCode,
     fallbackLng: 'es',
-    debug: __DEV__ ? false : false,
+    debug: false,
     resources: resources.default,
 });
 

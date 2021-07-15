@@ -6,7 +6,7 @@ import { getApolloClient } from '@Apollo';
 const deleteTodo = async (id: number) => {
     const client = await getApolloClient();
 
-    let persistedTodos: any = await client.readQuery({
+    const persistedTodos: any = await client.readQuery({
         query: getAllTodos,
     });
 

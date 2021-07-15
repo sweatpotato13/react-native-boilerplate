@@ -15,9 +15,8 @@ import { getApolloClient, TCacheShape } from '@Apollo';
 import StoryBookUIRoot from '../storybook';
 
 const App: React.FC = () => {
-    const [apolloClient, setApolloClient] = useState<
-        ApolloClient<TCacheShape>
-    >();
+    const [apolloClient, setApolloClient] =
+        useState<ApolloClient<TCacheShape>>();
 
     useEffect(() => {
         I18n.init();

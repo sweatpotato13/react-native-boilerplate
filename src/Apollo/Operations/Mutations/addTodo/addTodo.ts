@@ -16,7 +16,7 @@ const createAddTodo = async (text: string) => {
     const createNewTodo = async (text: string) => {
         const client = await getApolloClient();
 
-        let persistedTodos: any = await client.readQuery({
+        const persistedTodos: any = await client.readQuery({
             query: getAllTodos,
         });
 
