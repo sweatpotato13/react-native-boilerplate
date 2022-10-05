@@ -12,9 +12,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged",
-            "prepare-commit-msg": "devmoji -e",
-            "commit-msg": "if git-branch-is dev; then commitlint -E HUSKY_GIT_PARAMS; fi"
+            "pre-commit": "lint-staged"
         }
     },
     "scripts": {
@@ -35,7 +33,9 @@
         "release:major": "standard-version -- --release-as major",
         "release:minor": "standard-version -- --release-as minor",
         "release:patch": "standard-version -- --release-as patch",
-        "release:version": "standard-version -- --release-as"
+        "release:version": "standard-version -- --release-as",
+        "prepare": "husky install",
+        "pre-commit": "lint-staged"
     },
     "dependencies": {
         "@apollo/client": "3.2.5",
@@ -106,7 +106,6 @@
         "babel-jest": "26.6.3",
         "babel-loader": "8.1.0",
         "babel-plugin-module-resolver": "3.2.0",
-        "devmoji": "^2.3.0",
         "enzyme": "3.11.0",
         "enzyme-adapter-react-16": "1.15.4",
         "enzyme-to-json": "3.5.0",
@@ -116,8 +115,7 @@
         "eslint-plugin-import": "2.22.0",
         "eslint-plugin-jsx-a11y": "6.3.1",
         "eslint-plugin-react": "7.20.6",
-        "git-branch-is": "^4.0.0",
-        "husky": "4.2.5",
+        "husky": "^8.0.1",
         "i18next-parser": "^3.6.0",
         "jest": "26.6.3",
         "jest-styled-components": "6.3.4",
@@ -166,29 +164,30 @@
         "tls": false
     },
     "browser": {
-        "zlib": "browserify-zlib",
+        "_stream_duplex": "readable-stream/duplex",
+        "_stream_passthrough": "readable-stream/passthrough",
+        "_stream_readable": "readable-stream/readable",
+        "_stream_transform": "readable-stream/transform",
+        "_stream_writable": "readable-stream/writable",
         "console": "console-browserify",
         "constants": "constants-browserify",
         "crypto": "react-native-crypto",
+        "dgram": "react-native-udp",
         "dns": "dns.js",
-        "net": "react-native-tcp",
         "domain": "domain-browser",
+        "fs": "react-native-level-fs",
         "http": "@tradle/react-native-http",
         "https": "https-browserify",
+        "net": "react-native-tcp",
         "os": "react-native-os",
         "path": "path-browserify",
         "querystring": "querystring-es3",
-        "fs": "react-native-level-fs",
-        "_stream_transform": "readable-stream/transform",
-        "_stream_readable": "readable-stream/readable",
-        "_stream_writable": "readable-stream/writable",
-        "_stream_duplex": "readable-stream/duplex",
-        "_stream_passthrough": "readable-stream/passthrough",
-        "dgram": "react-native-udp",
         "stream": "stream-browserify",
         "timers": "timers-browserify",
+        "tls": false,
         "tty": "tty-browserify",
         "vm": "vm-browserify",
-        "tls": false
-    }
+        "zlib": "browserify-zlib"
+    },
+    "packageManager": "yarn@3.2.3"
 }
