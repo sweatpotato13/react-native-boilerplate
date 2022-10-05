@@ -10,11 +10,6 @@
             "prettier --write"
         ]
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
     "scripts": {
         "start": "react-native start",
         "test": "jest",
