@@ -2,7 +2,7 @@
 
 A boilerplate to bootstrap React Native mobile applications that use Apollo Client 3 for GraphQL, with an aim to provide best developer experience and performance out of the box.
 
-Current implementation of the boilerplate uses `React Native 0.63.2` together with TypeScript.
+Current implementation of the boilerplate uses `React Native 0.70.2` together with TypeScript.
 
 ### Core Packages
 
