@@ -1,3 +1,4 @@
+import 'intl-pluralrules'
 import React, { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
