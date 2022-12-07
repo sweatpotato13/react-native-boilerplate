@@ -1,4 +1,4 @@
-import 'intl-pluralrules'
+import 'intl-pluralrules';
 import React, { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
@@ -7,13 +7,13 @@ import BootSplash from 'react-native-bootsplash';
 import { ApolloProvider, ApolloClient } from '@apollo/client';
 
 import { theme } from '@Definitions/Styled';
-import { IS_STORYBOOK } from 'react-native-dotenv';
+import { IS_STORYBOOK } from '@env';
 import { AppContainer, navigationRef, rootStack } from '@Router';
-import { I18n } from '@I18n';
 import { SafeArea } from '@Styled';
 
 import { getApolloClient, TCacheShape } from '@Apollo';
 import StoryBookUIRoot from '../storybook';
+import { I18n } from '@I18n';
 
 const App: React.FC = () => {
     const [apolloClient, setApolloClient] =

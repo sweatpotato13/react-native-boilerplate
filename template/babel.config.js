@@ -1,8 +1,5 @@
 module.exports = {
-    presets: [
-        'module:metro-react-native-babel-preset',
-        'module:react-native-dotenv',
-    ],
+    presets: ['module:metro-react-native-babel-preset'],
     plugins: [
         [
             'module-resolver',
@@ -13,13 +10,26 @@ module.exports = {
                     '@Styled': './src/Styled',
                     '@Definitions': './src/Definitions',
                     '@Interfaces': './src/Interfaces',
-                    '@I18n': ['./src/I18n'],
+                    '@I18n': './src/I18n',
                     '@Router': './src/Router',
                     '@Services': './src/Services',
                     '@Scenes': './scenes',
                     '@Apollo': './src/Apollo',
                     '@Screens': './src/Screens',
                 },
+            },
+        ],
+        [
+            'module:react-native-dotenv',
+            {
+                envName: 'APP_ENV',
+                moduleName: '@env',
+                path: '.env',
+                blocklist: null,
+                allowlist: null,
+                safe: false,
+                allowUndefined: true,
+                verbose: false,
             },
         ],
     ],

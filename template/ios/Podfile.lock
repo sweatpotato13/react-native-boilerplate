@@ -17,7 +17,7 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.70.6)
   - fmt (6.2.1)
   - glog (0.3.5)
-  - hermes-engine (0.70.5)
+  - hermes-engine (0.70.6)
   - JWT (3.0.0-beta.14):
     - Base64 (~> 1.1.2)
   - libevent (2.1.12)
@@ -321,7 +321,7 @@ PODS:
     - React-jsi (= 0.70.6)
     - React-logger (= 0.70.6)
     - React-perflogger (= 0.70.6)
-  - RNBootSplash (4.3.3):
+  - RNBootSplash (4.4.0):
     - React-Core
   - RNCAsyncStorage (1.12.1):
     - React-Core
@@ -524,7 +524,7 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: dd1186fd05255e3457baa2f4ca65e94c2cd1e3ac
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
-  hermes-engine: 7fe5fc6ef707b7fdcb161b63898ec500e285653d
+  hermes-engine: 2af7b7a59128f250adfd86f15aa1d5a2ecd39995
   JWT: ef71dfb03e1f842081e64dc42eef0e164f35d251
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
@@ -556,7 +556,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: c75ceef7aa60a33b2d5731ebe5800ddde40cefc4
   React-runtimeexecutor: 15437b576139df27635400de0599d9844f1ab817
   ReactCommon: 349be31adeecffc7986a0de875d7fb0dcf4e251c
-  RNBootSplash: 7e91ea56c7010aae487489789dbe212e8c905a0c
+  RNBootSplash: 8ecffd190fae05291b671ea2280c5238f15499a9
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNGestureHandler: 62232ba8f562f7dea5ba1b3383494eb5bf97a4d3

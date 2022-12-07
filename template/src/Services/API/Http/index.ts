@@ -1,6 +1,6 @@
 // #region Global Imports
 import { stringify } from 'query-string';
-import { API_KEY, API_URL } from 'react-native-dotenv';
+import { API_KEY, API_URL } from '@env';
 import 'isomorphic-fetch';
 // #endregion Global Imports
 
