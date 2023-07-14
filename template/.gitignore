@@ -73,3 +73,6 @@ buck-out/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# testing
+/coverage

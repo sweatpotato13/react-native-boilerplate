@@ -4,7 +4,7 @@ module.exports = {
         "jest": true
     },
     extends: [
-        "@react-native-community",
+        "@react-native",
         "airbnb-typescript",
         "prettier",
         "prettier/@typescript-eslint",

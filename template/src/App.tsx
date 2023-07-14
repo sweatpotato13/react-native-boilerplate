@@ -8,7 +8,7 @@ import { ApolloProvider, ApolloClient } from '@apollo/client';
 
 import { theme } from '@Definitions/Styled';
 import { IS_STORYBOOK } from '@env';
-import { AppContainer, navigationRef, rootStack } from '@Router';
+import { AppContainer } from '@Router';
 import { SafeArea } from '@Styled';
 
 import { getApolloClient, TCacheShape } from '@Apollo';
