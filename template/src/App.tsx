@@ -1,51 +1,123 @@
-import 'intl-pluralrules';
-import React, { useState, useEffect } from 'react';
-import { Text } from 'react-native';
-import { ThemeProvider } from 'styled-components/native';
-import codePush from 'react-native-code-push';
-import BootSplash from 'react-native-bootsplash';
-import { ApolloProvider, ApolloClient } from '@apollo/client';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
 
-import { theme } from '@Definitions/Styled';
-import { IS_STORYBOOK } from '@env';
-import { AppContainer } from '@Router';
-import { SafeArea } from '@Styled';
+import type { PropsWithChildren } from 'react';
+import React from 'react';
+import {
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    useColorScheme,
+    View,
+} from 'react-native';
+import {
+    Colors,
+    DebugInstructions,
+    Header,
+    LearnMoreLinks,
+    ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
 
-import { getApolloClient, TCacheShape } from '@Apollo';
-import StoryBookUIRoot from '../storybook';
-import { I18n } from '@I18n';
+type SectionProps = PropsWithChildren<{
+    title: string;
+}>;
 
-const App: React.FC = () => {
-    const [apolloClient, setApolloClient] =
-        useState<ApolloClient<TCacheShape>>();
+function Section({ children, title }: SectionProps): React.JSX.Element {
+    const isDarkMode = useColorScheme() === 'dark';
+    return (
+        <View style={styles.sectionContainer}>
+            <Text
+                style={[
+                    styles.sectionTitle,
+                    {
+                        color: isDarkMode ? Colors.white : Colors.black,
+                    },
+                ]}
+            >
+                {title}
+            </Text>
+            <Text
+                style={[
+                    styles.sectionDescription,
+                    {
+                        color: isDarkMode ? Colors.light : Colors.dark,
+                    },
+                ]}
+            >
+                {children}
+            </Text>
+        </View>
+    );
+}
 
-    useEffect(() => {
-        I18n.init();
-        BootSplash.hide();
-        getApolloClient().then((c: TCacheShape) => setApolloClient(c));
-    }, []);
+function App(): React.JSX.Element {
+    const isDarkMode = useColorScheme() === 'dark';
 
-    if (IS_STORYBOOK === 'true') {
-        return <StoryBookUIRoot />;
-    }
-
-    if (!apolloClient) {
-        return <Text>Loading...</Text>;
-    }
+    const backgroundStyle = {
+        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    };
 
     return (
-        <ApolloProvider client={apolloClient}>
-            <ThemeProvider theme={theme}>
-                <SafeArea>
-                    <AppContainer />
-                </SafeArea>
-            </ThemeProvider>
-        </ApolloProvider>
+        <SafeAreaView style={backgroundStyle}>
+            <StatusBar
+                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                backgroundColor={backgroundStyle.backgroundColor}
+            />
+            <ScrollView
+                contentInsetAdjustmentBehavior="automatic"
+                style={backgroundStyle}
+            >
+                <Header />
+                <View
+                    style={{
+                        backgroundColor: isDarkMode
+                            ? Colors.black
+                            : Colors.white,
+                    }}
+                >
+                    <Section title="Step One">
+                        Edit <Text style={styles.highlight}>App.tsx</Text> to
+                        change this screen and then come back to see your edits.
+                    </Section>
+                    <Section title="See Your Changes">
+                        <ReloadInstructions />
+                    </Section>
+                    <Section title="Debug">
+                        <DebugInstructions />
+                    </Section>
+                    <Section title="Learn More">
+                        Read the docs to discover what to do next:
+                    </Section>
+                    <LearnMoreLinks />
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     );
-};
+}
 
-const codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
+const styles = StyleSheet.create({
+    sectionContainer: {
+        marginTop: 32,
+        paddingHorizontal: 24,
+    },
+    sectionTitle: {
+        fontSize: 24,
+        fontWeight: '600',
+    },
+    sectionDescription: {
+        marginTop: 8,
+        fontSize: 18,
+        fontWeight: '400',
+    },
+    highlight: {
+        fontWeight: '700',
+    },
+});
 
-const exportedApp = IS_STORYBOOK ? App : codePush(codePushOptions)(App);
-
-export default exportedApp;
+export default App;

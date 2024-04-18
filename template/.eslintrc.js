@@ -1,28 +1,20 @@
 module.exports = {
     root: true,
-    "env": {
-        "jest": true
-    },
+    plugins: ["@typescript-eslint/eslint-plugin", "security", "simple-import-sort"],
     extends: [
-        "@react-native",
-        "airbnb-typescript",
-        "prettier",
-        "prettier/@typescript-eslint",
-        "prettier/react",
+        "plugin:security/recommended-legacy",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
     ],
-    rules: {
-        "import/no-unresolved": "off",
-        "import/prefer-default-export": "off",
-        "no-underscore-dangle": "off",
-        "no-console": "off",
-        "react/prop-types": "off",
-        "import/no-extraneous-dependencies": [
-            {
-                devDependencies: [
-                    ".storybook/**",
-                    "stories/**" 
-                ]
-            }
-        ]
+    rules:   {
+        "@typescript-eslint/interface-name-prefix": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "semi": "error"
     },
 };
